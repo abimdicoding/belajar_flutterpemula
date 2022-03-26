@@ -1,0 +1,4 @@
+#Sat Mar 26 15:33:42 ICT 2022
+base.0=D\:\\SIB\\Kelas\\6. Belajar Untuk Membuat Aplikasi Flutter Pemula\\Project Latihan\\testing_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
