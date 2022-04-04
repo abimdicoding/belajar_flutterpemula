@@ -41,7 +41,7 @@ var tourismPlaceList = [
     location: 'Jl. Mujahidin',
     openDays: 'Open Everyday',
     openTime: '07:00 - 23.30',
-    imageAsset: 'tumbuh.jpg',
+    imageAsset: 'images/tumbuh.jpg',
   ),
   TourismPlace(
     name: 'Platform Cafe',
@@ -62,7 +62,7 @@ var tourismPlaceList = [
     location: 'Jl. Al-Hikmah 2',
     openDays: 'Open Everyday',
     openTime: '10:00 - 00:00',
-    imageAsset: 'images/sahaya.png',
+    imageAsset: 'images/sahaya.jpg',
   ),
   TourismPlace(
     name: 'Segitiga Coffee',
