@@ -42,7 +42,11 @@ class TourismPlaceList extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   flex: 1,
-                  child: Image.asset(place.imageAsset),
+                  child: Image.asset(
+                    place.imageAsset,
+                    height: 100,
+                    fit: BoxFit.fitWidth,
+                  ),
                 ),
                 Expanded(
                   flex: 2,
@@ -77,7 +81,8 @@ class TourismPlaceList extends StatelessWidget {
 class TourismPlaceGrid extends StatelessWidget {
   final int gridCount;
 
-  TourismPlaceGrid({required this.gridCount});
+  const TourismPlaceGrid({required this.gridCount});
+
   @override
   Widget build(BuildContext context) {
     return Scrollbar(

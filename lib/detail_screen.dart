@@ -1,14 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:testing_app/main_screen.dart';
 import 'package:testing_app/model/tourism_place.dart';
 
-var informationTextStyle = TextStyle(fontFamily: 'Oxygen');
+const informationTextStyle = TextStyle(fontFamily: 'Oxygen');
 
 class DetailScreen extends StatelessWidget {
   final TourismPlace place;
 
-  DetailScreen({required this.place});
+  const DetailScreen({required this.place});
 
   @override
   Widget build(BuildContext context) {
@@ -24,17 +23,10 @@ class DetailScreen extends StatelessWidget {
   }
 }
 
-class DetailWebPage extends StatefulWidget {
+class DetailWebPage extends StatelessWidget {
   final TourismPlace place;
 
-  DetailWebPage({required this.place});
-
-  @override
-  _DetailWebPageState createState() => _DetailWebPageState();
-}
-
-class _DetailWebPageState extends State<DetailWebPage> {
-  final _scrollController = ScrollController();
+  const DetailWebPage({required this.place});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +40,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
           horizontal: 64,
         ),
         child: Center(
-          child: Container(
+          child: SizedBox(
             width: screenWidth <= 1200 ? 800 : 1200,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,7 +60,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                       child: Column(
                         children: [
                           ClipRRect(
-                            child: Image.asset(widget.place.imageAsset),
+                            child: Image.asset(place.imageAsset),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           SizedBox(height: 16),
@@ -83,14 +75,12 @@ class _DetailWebPageState extends State<DetailWebPage> {
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: <Widget>[
-                              Container(
-                                child: Text(
-                                  widget.place.name,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 30.0,
-                                    fontFamily: 'Staatliches',
-                                  ),
+                              Text(
+                                place.name,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 30.0,
+                                  fontFamily: 'Staatliches',
                                 ),
                               ),
                               Row(
@@ -102,7 +92,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                       Icon(Icons.calendar_today),
                                       SizedBox(width: 8.0),
                                       Text(
-                                        widget.place.openDays,
+                                        place.openDays,
                                         style: informationTextStyle,
                                       ),
                                     ],
@@ -115,7 +105,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                   Icon(Icons.access_time),
                                   SizedBox(width: 8.0),
                                   Text(
-                                    widget.place.openTime,
+                                    place.openTime,
                                     style: informationTextStyle,
                                   ),
                                 ],
@@ -134,18 +124,12 @@ class _DetailWebPageState extends State<DetailWebPage> {
       ),
     );
   }
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
 }
 
 class DetailMobilePage extends StatelessWidget {
   final TourismPlace place;
 
-  DetailMobilePage({required this.place});
+  const DetailMobilePage({required this.place});
 
   @override
   Widget build(BuildContext context) {
